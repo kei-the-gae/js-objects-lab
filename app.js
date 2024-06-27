@@ -19,5 +19,8 @@ const game = {
     ],
 }
 
-// Uncomment the line below to see full array from data.js
+// Uncomment the line below to see full pokemon array from data.js - includes pokedex number, name, type, hp, and whether it is a starter or not (bool)
 // console.dir(pokemon, { maxArrayLength: null });
+
+//Uncomment the line below to see game data array - inlcudes party array (entries from pokemon array in data.js), gyms array (includes location, completion (bool) and difficulty rating), and items array (includes name and quantity in bag)
+// console.log(game);
