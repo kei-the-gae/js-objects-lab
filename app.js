@@ -154,3 +154,14 @@ game.catchPokemon = function (pokemonObj) {
 
 game.catchPokemon(pokemon.find((pokemon) => pokemon.name === "Lapras"));
 // Lapras
+
+/*
+Exercise 12
+1. Similar to Exercise 6, now complete gyms with a difficulty below 6. How will you approach this?
+ (change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 12 here:
+*/
+
+game.gyms.forEach((gym) => { if (gym.difficulty < 6) gym.completed = true });
+
