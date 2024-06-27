@@ -22,7 +22,7 @@ const game = {
 // Uncomment the line below to see full pokemon array from data.js - includes pokedex number, name, type, hp, and whether it is a starter or not (bool)
 // console.dir(pokemon, { maxArrayLength: null });
 
-//Uncomment the line below to see game data array - inlcudes party array (entries from pokemon array in data.js), gyms array (includes location, completion (bool) and difficulty rating), items array (includes name and quantity in bag), and difficulty
+//Uncomment the line below to see game data array - inlcudes party array (entries from pokemon array in data.js), gyms array (includes location, completion (bool) and difficulty rating), items array (includes name and quantity in bag)
 // console.log(game);
 
 /*
@@ -35,3 +35,14 @@ Solve Exercise 3 here:
 */
 
 game.difficulty = "Med";
+
+/*
+Exercise 4
+1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
+2. Add this Pokémon to the `game.party` array. Which array method will you use to add them?
+
+
+Solve Exercise 4 here:
+*/
+
+game.party.push(pokemon[3]);
