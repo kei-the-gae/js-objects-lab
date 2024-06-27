@@ -22,5 +22,16 @@ const game = {
 // Uncomment the line below to see full pokemon array from data.js - includes pokedex number, name, type, hp, and whether it is a starter or not (bool)
 // console.dir(pokemon, { maxArrayLength: null });
 
-//Uncomment the line below to see game data array - inlcudes party array (entries from pokemon array in data.js), gyms array (includes location, completion (bool) and difficulty rating), and items array (includes name and quantity in bag)
+//Uncomment the line below to see game data array - inlcudes party array (entries from pokemon array in data.js), gyms array (includes location, completion (bool) and difficulty rating), items array (includes name and quantity in bag), and difficulty
 // console.log(game);
+
+/*
+Exercise 3
+1. Add a new property to the `game` object. Let's call it "difficulty".
+2. Choose a value for "difficulty" that you think fits the game. Ex: "Easy", "Med" or "Hard". How would you assign it?
+
+
+Solve Exercise 3 here:
+*/
+
+game.difficulty = "Med";
