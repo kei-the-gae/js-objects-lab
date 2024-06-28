@@ -19,10 +19,16 @@ const game = {
     ],
 }
 
-// Uncomment the line below to see full pokemon array from data.js - includes pokedex number, name, type, hp, and whether it is a starter or not (bool)
+// I added functions - pokemonSearch because I'm a nerd and know my pokemon names, and badgeAcquired which has the logic for exercises 6, 12, and 14 since it asks for the same thing with a different number
+
+const pokemonSearch = pokemonName => pokemon.find((pokemon) => pokemon.name === pokemonName);
+const badgeAcquired = gymDifficulty => game.gyms.forEach((gym) => { if (gym.difficulty < gymDifficulty) gym.completed = true });
+
+
+// Uncomment the line below to see full pokemon array from data.js
 // console.dir(pokemon, { maxArrayLength: null });
 
-//Uncomment the line below to see game data array - inlcudes party array (entries from pokemon array in data.js), gyms array (includes location, completion (bool) and difficulty rating), items array (includes name and quantity in bag)
+//Uncomment the line below to see game data array
 // console.log(game);
 
 /*
@@ -46,7 +52,7 @@ Solve Exercise 4 here:
 */
 
 // Charmander
-game.party.push(pokemon[3]);
+game.party.push(pokemonSearch("Charmander"));
 
 /*
 Exercise 5
@@ -60,9 +66,9 @@ Solve Exercise 5 here:
 // Dragonite
 // Magnemite
 // Cubone
-game.party.push(pokemon.find((pokemon) => pokemon.name === "Dragonite"));
-game.party.push(pokemon.find((pokemon) => pokemon.name === "Magnemite"));
-game.party.push(pokemon.find((pokemon) => pokemon.name === "Cubone"));
+game.party.push(pokemonSearch("Dragonite"));
+game.party.push(pokemonSearch("Magnemite"));
+game.party.push(pokemonSearch("Cubone"));
 
 /*
 Exercise 6
@@ -73,7 +79,7 @@ Exercise 6
 Solve Exercise 6 here:
 */
 
-game.gyms.forEach((gym) => { if (gym.difficulty < 3) gym.completed = true });
+badgeAcquired(3);
 
 /*
 Exercise 7
@@ -92,7 +98,7 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
-game.party.splice(0, 1, pokemon.find((pokemon) => pokemon.name === "Charmeleon"));
+game.party.splice(0, 1, pokemonSearch("Charmeleon"));
 
 /*
 Exercise 8
@@ -131,7 +137,7 @@ game.catchPokemon = function (pokemonObj) {
     game.party.push(pokemonObj);
 };
 
-game.catchPokemon(pokemon.find((pokemon) => pokemon.name === "Alakazam"));
+game.catchPokemon(pokemonSearch("Alakazam"));
 // Alakazam
 
 /*
@@ -152,7 +158,7 @@ game.catchPokemon = function (pokemonObj) {
     game.items[1].quantity--;
 };
 
-game.catchPokemon(pokemon.find((pokemon) => pokemon.name === "Lapras"));
+game.catchPokemon(pokemonSearch("Lapras"));
 // Lapras
 
 /*
@@ -163,7 +169,7 @@ Exercise 12
 Solve Exercise 12 here:
 */
 
-game.gyms.forEach((gym) => { if (gym.difficulty < 6) gym.completed = true });
+badgeAcquired(6);
 
 /*
 Exercise 13
@@ -222,7 +228,7 @@ Exercise 15
 Solve Exercise 15 here:
 */
 
-game.gyms.forEach((gym) => { if (gym.difficulty < 8) gym.completed = true });
+badgeAcquired(8);
 
 /*
 Exercise 16
