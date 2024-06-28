@@ -283,3 +283,31 @@ game.catchPokemon = function (pokemonObj) {
 
 game.catchPokemon(pokemonSearch("Vulpix"));
 console.log(game.items);
+
+/*
+Exercise 19
+Copy the `catchPokemon` method that you just wrote above, and paste it below. The time has come to make it so that we cannot catch a Pokemon when we do not have any pokeballs to catch it with. 
+
+Modify the method so that if there are no pokeballs a message will be displayed that there are not enough pokeballs to catch the desired Pokemon.
+
+Also, ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 19 here:
+*/
+
+game.catchPokemon = function (pokemonObj) {
+    switch (game.items[1].quantity === 0) {
+        case true:
+            console.log("You do not have any Pokeballs to catch this Pokemon with!");
+            break;
+        case false:
+            game.items[1].quantity--;
+            if (game.party.length < 6) {
+                game.party.push(pokemonObj);
+            } else {
+                game.collection.push(pokemonObj);
+            };
+            break;
+    };
+};
+
