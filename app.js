@@ -52,7 +52,7 @@ Solve Exercise 4 here:
 */
 
 // Charmander
-game.party.push(pokemonSearch("Charmander"));
+// game.party.push(pokemonSearch("Charmander"));
 
 /*
 Exercise 5
@@ -66,9 +66,9 @@ Solve Exercise 5 here:
 // Dragonite
 // Magnemite
 // Cubone
-game.party.push(pokemonSearch("Dragonite"));
-game.party.push(pokemonSearch("Magnemite"));
-game.party.push(pokemonSearch("Cubone"));
+// game.party.push(pokemonSearch("Dragonite"));
+// game.party.push(pokemonSearch("Magnemite"));
+// game.party.push(pokemonSearch("Cubone"));
 
 /*
 Exercise 6
@@ -98,7 +98,7 @@ More Hints: The existing starter Pokemon will be *replaced* in your party with t
 Solve Exercise 7 here:
 */
 
-game.party.splice(0, 1, pokemonSearch("Charmeleon"));
+// game.party.splice(0, 1, pokemonSearch("Charmeleon"));
 
 /*
 Exercise 8
@@ -137,7 +137,7 @@ game.catchPokemon = function (pokemonObj) {
     game.party.push(pokemonObj);
 };
 
-game.catchPokemon(pokemonSearch("Alakazam"));
+// game.catchPokemon(pokemonSearch("Alakazam"));
 // Alakazam
 
 /*
@@ -159,7 +159,7 @@ game.catchPokemon = function (pokemonObj) {
 };
 
 // Lapras
-game.catchPokemon(pokemonSearch("Lapras"));
+// game.catchPokemon(pokemonSearch("Lapras"));
 console.log(game.items);
 
 /*
@@ -281,7 +281,7 @@ game.catchPokemon = function (pokemonObj) {
     };
 };
 
-game.catchPokemon(pokemonSearch("Vulpix"));
+// game.catchPokemon(pokemonSearch("Vulpix"));
 console.log(game.items);
 
 /*
@@ -311,3 +311,34 @@ game.catchPokemon = function (pokemonObj) {
     };
 };
 
+/*
+Exercise 20
+Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify is so that you can just pass in the name of a Pokemon instead of an entire object, and the method will look up the Pokemon from the data set for you.
+
+The string passed in should be allowed to be any case (for example, if the string 'PiKacHU' is passed to the function, it should match to 'Pikachu' in the data set). 
+
+If there is not a match, then return a string noting that the selected Pokemon does not exist. Ensure you do not decrement the pokeball count if an invalid Pokemon name is passed in, and also ensure that the Pokemon isn't added to the `game.party` or the `game.collection`.
+
+Solve Exercise 20 here:
+*/
+
+game.catchPokemon = function (pokemonObj) {
+    const pokemonName = pokemonObj[0].toUpperCase() + pokemonObj.slice(1).toLowerCase();
+    if (pokemonSearch(pokemonName)) {
+        switch (game.items[1].quantity === 0) {
+            case true:
+                console.log("You do not have any Pokeballs to catch this Pokemon with!");
+                break;
+            case false:
+                game.items[1].quantity--;
+                if (game.party.length < 6) {
+                    game.party.push(pokemonSearch(pokemonName));
+                } else {
+                    game.collection.push(pokemonSearch(pokemonName));
+                };
+                break;
+        };
+    } else {
+        console.log("This pokemon doesn't exist!");
+    };
+};
