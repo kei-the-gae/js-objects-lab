@@ -108,7 +108,7 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-game.party.forEach((pokemon) => { console.log(pokemon.name) });
+// game.party.forEach((pokemon) => { console.log(pokemon.name) });
 
 /*
 Exercise 9
@@ -119,7 +119,7 @@ Exercise 9
 Solve Exercise 9 here:
 */
 
-pokemon.forEach((pokemon) => { if (pokemon.starter === true) console.log(pokemon.name) });
+// pokemon.forEach((pokemon) => { if (pokemon.starter === true) console.log(pokemon.name) });
 
 /*
 Exercise 10
@@ -160,7 +160,7 @@ game.catchPokemon = function (pokemonObj) {
 
 // Lapras
 // game.catchPokemon(pokemonSearch("Lapras"));
-console.log(game.items);
+// console.log(game.items);
 
 /*
 Exercise 12
@@ -204,7 +204,7 @@ game.gymStatus = function () {
             gymTally.incomplete++;
         }
     });
-    console.log(gymTally);
+    // console.log(gymTally);
 };
 
 /*
@@ -239,7 +239,7 @@ Exercise 16
 Solve Exercise 16 here:
 */
 
-console.log(game);
+// console.log(game);
 
 /*
 Exercise 17
@@ -282,7 +282,7 @@ game.catchPokemon = function (pokemonObj) {
 };
 
 // game.catchPokemon(pokemonSearch("Vulpix"));
-console.log(game.items);
+// console.log(game.items);
 
 /*
 Exercise 19
@@ -379,4 +379,4 @@ const pokemonTypes = {};
 
 pokemon.forEach((pokemon) => { pokemonTypes[pokemon.type] = [] });
 pokemon.forEach((pokemon) => { pokemonTypes[pokemon.type].push(pokemon); })
-console.log(pokemonTypes);
+// console.log(pokemonTypes);
