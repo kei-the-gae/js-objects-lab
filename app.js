@@ -322,6 +322,12 @@ If there is not a match, then return a string noting that the selected Pokemon d
 Solve Exercise 20 here:
 */
 
+/*
+I have used my original pokemonSearch function to complete this exercise, in order to make my code neater and avoid repetition. Being what this exercise is, I'm placing the code from that function above here for quick reference.
+
+const pokemonSearch = pokemonName => pokemon.find((pokemon) => pokemon.name === pokemonName);
+*/
+
 game.catchPokemon = function (pokemonObj) {
     const pokemonName = pokemonObj[0].toUpperCase() + pokemonObj.slice(1).toLowerCase();
     if (pokemonSearch(pokemonName)) {
@@ -342,3 +348,35 @@ game.catchPokemon = function (pokemonObj) {
         console.log("This pokemon doesn't exist!");
     };
 };
+
+/*
+Exercise 21
+Dynamically construct an object with the existing `pokemon` data sorted by the different pokemon types. The object will have this structure:
+
+{
+  grass: [
+    { number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true },
+    { number: 2, name: 'Ivysaur', type: 'grass', hp: 60, starter: false },
+    { number: 3, name: 'Venusaur', type: 'grass', hp: 80, starter: false },
+    * more grass type Pokemon objects...
+  ],
+  fire: [
+    { number: 4, name: 'Charmander', type: 'fire', hp: 39, starter: true },
+    * more fire type Pokemon objects...
+  ],
+  water: [
+    * water type Pokemon objects...
+  ],
+  * etc... until there is an array for every Pokemon type!
+}
+
+Log the object when it's constructed.
+
+Solve Exercise 21 here:
+*/
+
+const pokemonTypes = {};
+
+pokemon.forEach((pokemon) => { pokemonTypes[pokemon.type] = [] });
+pokemon.forEach((pokemon) => { pokemonTypes[pokemon.type].push(pokemon); })
+console.log(pokemonTypes);
